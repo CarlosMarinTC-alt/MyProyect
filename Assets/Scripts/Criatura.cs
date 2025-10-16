@@ -33,26 +33,29 @@ public class Criatura : MonoBehaviour
         {
             sr.flipX = mx > 0f; // si el jugador está a la izquierda, mirar a la izquierda
         }
-        // --- Control del Animator según movimiento ---
-        if (!isMoving)
-        {
-            // Nos aseguramos de pausar y llevar al frame 0 solo al momento de detenerse
-            if (wasMoving)
-            {
-                animator.speed = 0f;
-                var stateHash = animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
-                animator.Play(stateHash, 0, 0f); // rebobina al frame 0 una sola vez
-            }
-            else
-            {
-                animator.speed = 0f; // ya estaba quieto: mantener pausa
-            }
-        }
-        else
-        {
-            // En movimiento: reproducir normalmente
-            if (animator.speed == 0f) animator.speed = 1f;
-        }
+
+//        POR SI NOS SIRVE QUE SE MUEVA LA SOMBRA
+
+//        // --- Control del Animator según movimiento ---
+//        if (!isMoving)
+//        {
+//            // Nos aseguramos de pausar y llevar al frame 0 solo al momento de detenerse
+//            if (wasMoving)
+//            {
+//                animator.speed = 0f;
+//                var stateHash = animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+//                animator.Play(stateHash, 0, 0f); // rebobina al frame 0 una sola vez
+//            }
+//            else
+//            {
+//                animator.speed = 0f; // ya estaba quieto: mantener pausa
+//            }
+//        }
+//        else
+//        {
+//            // En movimiento: reproducir normalmente
+//            if (animator.speed == 0f) animator.speed = 1f;
+//        }
 
         // Actualiza memoria para el próximo frame
         wasMoving = isMoving;
