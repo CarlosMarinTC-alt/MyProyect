@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7a9735590be39a4783e4306f0fa2c56
+guid: 54b5530412ff4b5409379f2c0f8d173c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Cuartotios
+  - name: 'Pasillo_abajo[1]'
     originalName: 
-    pivot: {x: 0.49778762, y: -0.03549061}
+    pivot: {x: 0.48083624, y: -0.11614731}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 452
-      height: 479
-    spriteID: 5ffab4b8724fe234c93c6181527fe1cb
+      width: 287
+      height: 353
+    spriteID: 8180523beefd2d64c9561d5a6d049f41
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2364278139
+      value0: 3858248875
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Cuartotios
+    name: 'Pasillo_abajo[1]'
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Cuartotios
+    - name: Pasillo_abajo
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 25
-        y: 17
-        width: 452
-        height: 479
-      spriteId: 5ffab4b8724fe234c93c6181527fe1cb
+        x: 112
+        y: 41
+        width: 287
+        height: 353
+      spriteId: 8180523beefd2d64c9561d5a6d049f41
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
