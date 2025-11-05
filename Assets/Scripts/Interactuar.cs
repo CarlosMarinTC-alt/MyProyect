@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections;
 
 public class Interactuar : MonoBehaviour
 {
@@ -8,31 +9,88 @@ public class Interactuar : MonoBehaviour
     [Header("Indicador de interacción")]
     public Sprite iconoSprite;
     public Vector3 offset = new Vector3(0f, 3.5f, 0f);
-    public Vector2 cuadroDialogoPosicion = new Vector2(0.27f, 0.52f);
-    private bool puedeCambiar = false;
+
+    private bool puedeInteractuar = false;
     private Transform protaTransform;
     private GameObject iconoInstanciado;
 
-    public GameObject CuadroDeDialogo; 
-    public GameObject TextoEjemplo;
+    [Header("Diálogo")]
+    public GameObject CuadroDeDialogo;
+    public TextMeshProUGUI TextoEjemplo;
+    public GameObject ProtaGrande;
+    private GameObject Prota;
+    private MonoBehaviour ProtaScript;
+
+
+    private string[] lineasDialogo = {
+        "Hola",
+        "Como estas"
+    };
+
+    private int indiceDialogo = 0;
+    private bool mostrandoDialogo = false;
+
+    void Start()
+    {
+        if (CuadroDeDialogo != null) CuadroDeDialogo.SetActive(false);
+        if (CuadroDeDialogo != null) ProtaGrande.SetActive(false);
+        if (TextoEjemplo != null) TextoEjemplo.enabled = false;
+        Prota = GameObject.FindGameObjectWithTag("Player");
+        ProtaScript = Prota.GetComponent<MonoBehaviour>();
+    }
 
     void Update()
     {
-        if (puedeCambiar && protaTransform != null)
+        if (puedeInteractuar && protaTransform != null)
         {
             if (iconoInstanciado != null)
                 iconoInstanciado.transform.position = protaTransform.position + offset;
 
             if (Input.GetKeyDown(teclaInteraccion))
             {
-                CuadroDeDialogo.SetActive(true);
-                TextoEjemplo.SetActive(true);
+                if (!mostrandoDialogo)
+                {
+                    StartCoroutine(MostrarDialogo());
+                }
+                else
+                {
+                    SiguienteLinea();
+                }
             }
         }
-        else if(Input.GetKeyDown(teclaInteraccion) && CuadroDeDialogo.activeSelf)
+    }
+
+    private IEnumerator MostrarDialogo()
+    {
+        mostrandoDialogo = true;
+        indiceDialogo = 0;
+        
+        ProtaScript.enabled = false;
+
+        CuadroDeDialogo.SetActive(true);
+        ProtaGrande.SetActive(true);
+        TextoEjemplo.enabled = true;
+        TextoEjemplo.SetText(lineasDialogo[indiceDialogo]);
+
+        yield break; 
+    }
+
+    private void SiguienteLinea()
+    {
+        indiceDialogo++;
+
+        if (indiceDialogo < lineasDialogo.Length)
+        {
+            TextoEjemplo.SetText(lineasDialogo[indiceDialogo]);
+        }
+        else
         {
             CuadroDeDialogo.SetActive(false);
-            TextoEjemplo.SetActive(false);
+            ProtaGrande.SetActive(false);
+            TextoEjemplo.enabled = false;
+            mostrandoDialogo = false;
+
+            ProtaScript.enabled = true;
         }
     }
 
@@ -40,7 +98,7 @@ public class Interactuar : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            puedeCambiar = true;
+            puedeInteractuar = true;
             protaTransform = collision.transform;
 
             if (iconoSprite != null && iconoInstanciado == null)
@@ -58,7 +116,7 @@ public class Interactuar : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            puedeCambiar = false;
+            puedeInteractuar = false;
 
             if (iconoInstanciado != null)
             {
