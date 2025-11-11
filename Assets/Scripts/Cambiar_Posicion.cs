@@ -13,7 +13,7 @@ public class Cambiar_Posicion : MonoBehaviour
         if (player != null)
         {
             Transform protaTransform = player.transform;
-            int indiceEscenario = Escenario.ultimoIndiceEscenario; // <-- valor recibido
+            int indiceEscenario = Escenario.ultimoIndiceEscenario; 
 
             switch (indiceEscenario)
             {
