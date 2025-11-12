@@ -5,7 +5,9 @@ public class Escenario : MonoBehaviour
 {
     [Header("Configuración de cambio de escena")]
     [SerializeField] private int indiceEscenario;
+    [SerializeField] private int indiceRegreso;
     public static int ultimoIndiceEscenario = 99; 
+    public static int regresoPasillo = 0; 
 
     public KeyCode teclaInteraccion = KeyCode.Space;
 
@@ -28,6 +30,7 @@ public class Escenario : MonoBehaviour
             if (Input.GetKeyDown(teclaInteraccion))
             {
                 ultimoIndiceEscenario = indiceEscenario;
+                regresoPasillo = indiceRegreso;
 
                 CambiarEscenario(indiceEscenario);
             }

@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Escenario
   indiceEscenario: 3
+  indiceRegreso: 1
   teclaInteraccion: 32
   iconoSprite: {fileID: -4120209385200623851, guid: 406ab604d4d4b2841964112a9fa9b665, type: 3}
   offset: {x: 0, y: 0.1, z: 0}
@@ -571,10 +572,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1bfa56e4d7f6d94ca3a385d90678510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cambiar_Posicion
-  Posicion_pasillo: {x: 8.92, y: 0.55}
   Posicion_habitacion: {x: 0.27, y: 1.71}
   Posicion_cama: {x: 5.35, y: 0.52}
   Posicion_hab_tios: {x: 1.46, y: -4.66}
+  "Posicion_ba\xF1o": {x: 18.25, y: 0.82}
+  Posicion_pasilloAbajo: {x: 18.25, y: 0.82}
+  Posicion_regresoP_cuarto: {x: 8.92, y: 0.55}
+  Posicion_regresoP_tios: {x: 18.25, y: 0.82}
+  Posicion_regresoP_pasilloAbajo: {x: 18.25, y: 0.82}
+  "Posicion_regresoP_ba\xF1o": {x: 18.25, y: 0.82}
 --- !u!1001 &384981587
 PrefabInstance:
   m_ObjectHideFlags: 0
