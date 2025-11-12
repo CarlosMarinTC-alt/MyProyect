@@ -29,6 +29,7 @@ public class Interactuar : MonoBehaviour
 
     private int indiceDialogo = 0;
     private bool mostrandoDialogo = false;
+    public static bool quitarMovimiento = false;
 
     void Start()
     {
@@ -63,9 +64,8 @@ public class Interactuar : MonoBehaviour
     private IEnumerator MostrarDialogo()
     {
         mostrandoDialogo = true;
+        quitarMovimiento = mostrandoDialogo;
         indiceDialogo = 0;
-        
-        ProtaScript.enabled = false;
 
         CuadroDeDialogo.SetActive(true);
         ProtaGrande.SetActive(true);
@@ -89,8 +89,7 @@ public class Interactuar : MonoBehaviour
             ProtaGrande.SetActive(false);
             TextoEjemplo.enabled = false;
             mostrandoDialogo = false;
-
-            ProtaScript.enabled = true;
+            quitarMovimiento = mostrandoDialogo;
         }
     }
 

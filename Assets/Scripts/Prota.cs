@@ -24,10 +24,19 @@ public class Prota : MonoBehaviour
         float mx = Input.GetAxisRaw("Horizontal");
         float my = Input.GetAxisRaw("Vertical");
         v2 = new Vector2(mx, my).normalized;
-        // --- Voltear sprite ---
-        if (mx != 0) // Solo si se está moviendo en horizontal
+
+        if (Interactuar.quitarMovimiento)
         {
-            // Ajusta según tu sprite (si está al revés cámbialo)
+            rb.linearVelocity = Vector2.zero;
+            animator.speed = 0f;
+
+            animator.Play(animator.GetCurrentAnimatorStateInfo(0).shortNameHash, 0, 
+                          animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            return; 
+        }
+
+        if (mx != 0) 
+        {
             sr.flipX = mx < 0;
         }
         
@@ -51,7 +60,14 @@ public class Prota : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        rb.linearVelocity = v2 * vel;
+    {   
+        if(Interactuar.quitarMovimiento == false)
+        {
+            rb.linearVelocity = v2 * vel;
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, 0);
+        }
     }
 }
