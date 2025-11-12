@@ -6,20 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelTest1.unity
+    path: Assets/Scenes/ZLevelTest1.unity
     guid: fd044e9dfa5e6ef429f642d0ea958dab
   - enabled: 1
-    path: Assets/Scenes/Level1_Ilu.unity
+    path: Assets/Scenes/Cuarto_Prota.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Level1_Osc.unity
+    path: Assets/Scenes/ZLevel1_Osc.unity
     guid: f623582132698a849bbb8d1a152891f7
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Pasillo_Arriba.unity
     guid: 209ef0d5777def54c8a755ac206d95ef
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Cuarto_Tios.unity
     guid: f912a336aa5ccbe4dbcaff5b9b46ae71
+  - enabled: 1
+    path: "Assets/Scenes/Ba\xF1o_Arriba.unity"
+    guid: 66c8cfb27045e4448b9e57435e3efa7c
+  - enabled: 1
+    path: Assets/Scenes/Pasillo_Abajo.unity
+    guid: 1c568952203e66047ad98e15a6e54260
+  - enabled: 1
+    path: Assets/Scenes/Cocina.unity
+    guid: 697c3b1119b2d694795d99a6819dd4d0
+  - enabled: 1
+    path: Assets/Scenes/Lavado.unity
+    guid: f6d373e3ec9f55145b4681b677abb17d
+  - enabled: 1
+    path: Assets/Scenes/Sala.unity
+    guid: 6ddae4f1097b2ee4d973793163df567c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
