@@ -16,6 +16,7 @@ public class Escenario : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 3.5f, 0f);
     public Vector2 Posicion_pasillo = new Vector2(8.92f, 0.55f);
     public Vector2 Posicion_habitacion = new Vector2(0.27f, 0.52f);
+    
     private bool puedeCambiar = false;
     private Transform protaTransform;
     private GameObject iconoInstanciado;
